@@ -46,7 +46,16 @@ if (numberOfItemsPurchased % 2 === 0) points += ((numberOfItemsPurchased/2) *5)
 else (points += (( numberOfItemsPurchased -1 )/2) *5)
 
 console.log(points, "5 points per 2 items")
+
 // If the trimmed length of the item description is a multiple of 3, multiply the price by 0.2 and round up to the nearest integer. The result is the number of points earned.
+for (const item of items) {
+    if (item.shortDescription.length % 3 === 0) {
+        points += Math.ceil(item.price)
+    }
+}
+
+
+console.log(points, "after item description length")
 
 // 6 points if the day in the purchase date is odd.
 
