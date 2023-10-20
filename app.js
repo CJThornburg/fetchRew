@@ -40,8 +40,12 @@ if (divisibleBy25 === 0) points += 25
 console.log(points, "after divisible by 25 check")
 
 // 5 points for every two items on the receipt.
+const numberOfItemsPurchased = items.length
 
+if (numberOfItemsPurchased % 2 === 0) points += ((numberOfItemsPurchased/2) *5)
+else (points += (( numberOfItemsPurchased -1 )/2) *5)
 
+console.log(points, "5 points per 2 items")
 // If the trimmed length of the item description is a multiple of 3, multiply the price by 0.2 and round up to the nearest integer. The result is the number of points earned.
 
 // 6 points if the day in the purchase date is odd.
