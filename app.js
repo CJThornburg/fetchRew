@@ -29,11 +29,15 @@ const alphanumericArray = retailer.match(/[a-zA-Z0-9]/g);
  console.log(points, "after alphanumeric count")
 
 // 50 points if the total is a round dollar amount with no cents.
-let cents = total.substring(total.length-2, total.length)
+const cents = total.substring(total.length-2, total.length)
 if (cents === "00")  points+= 50
 console.log(points, "after 00 cents check")
-// if ()
+
 // 25 points if the total is a multiple of 0.25.
+const centsNumber = parseInt(cents)
+const divisibleBy25 = centsNumber % 25
+if (divisibleBy25 === 0) points += 25
+console.log(points, "after divisible by 25 check")
 
 // 5 points for every two items on the receipt.
 
