@@ -58,6 +58,12 @@ for (const item of items) {
 console.log(points, "after item description length")
 
 // 6 points if the day in the purchase date is odd.
+const day = parseInt( purchaseDate.substring(purchaseDate.length-2, purchaseDate.length))
+console.log(day)
+if (day % 2 !== 0) points += 6
+console.log(points, "after day date check")
+
+
 
 // 10 points if the time of purchase is after 2:00pm and before 4:00pm.
 
