@@ -74,6 +74,12 @@ time += (.01 *  parseInt( purchaseTime.substring(3, 5)))
 
     console.log(points, "points after time check")
 
+
+
+
+// add Id and save to local storage
+
+// return 
     res.json({ hi: "hi" })
 })
 
