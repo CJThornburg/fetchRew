@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 
 app.use(express.json());
 
-const rewardsHistoryObj = {}
+let rewardsHistoryObj = {}
 
 app.post('/receipts/process', async (req, res) => {
     let points = 0
@@ -63,7 +63,7 @@ for (const item of items) {
 // 6 points if the day in the purchase date is odd.
 const day = parseInt( purchaseDate.substring(purchaseDate.length-2, purchaseDate.length))
 if (day % 2 !== 0) points += 6
-console.log(points, "after day date check")
+// console.log(points, "after day date check")
 
 
 
@@ -93,8 +93,18 @@ rewardsHistoryObj[id] = points
 
 
 app.get('/receipts/:id/points', async (req, res) => {
-console.log(req.params.id)
-    res.json({ "points": 100000000000 })
+
+const id =req.params.id
+const points = rewardsHistoryObj[id]
+
+if (points) {
+
+    res.json({ "points": rewardsHistoryObj[id] })
+
+} else {
+    res.json({ "error" : "id could not be found, please confirm your input and try again"})
+}
+
 })
 
 
