@@ -11,7 +11,7 @@ In main dir, run:
 ```bash
    docker build -t fetch-app .
 ```
-allow the docker container to be created.
+Allow time for the docker container to be created.
 
 When completed, can run the app by running:
 
