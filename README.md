@@ -7,7 +7,7 @@ Clone the project
 ```
 
 In main dir, run:
-1.
+
 ```bash
    docker build -t fetch-app .
 ```
