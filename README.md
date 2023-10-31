@@ -6,7 +6,7 @@ Clone the project
     git clone https://github.com/CJThornburg/fetchRew.git
 ```
 
-In main dir, run:
+In main project directory, run:
 
 ```bash
    docker build -t fetch-app .
